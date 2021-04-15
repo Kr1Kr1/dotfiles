@@ -199,7 +199,7 @@ echo "FONT=$font" > /mnt/etc/vconsole.conf
 genfstab -L /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
 echo "en_US.UTF-8 UTF-8" >> /mnt/etc/locale.gen
-echo "en_DK.UTF-8 UTF-8" >> /mnt/etc/locale.gen
+echo "fr_FR.UTF-8 UTF-8" >> /mnt/etc/locale.gen
 ln -sf /usr/share/zoneinfo/Europe/Paris /mnt/etc/localtime
 arch-chroot /mnt locale-gen
 cat << EOF > /mnt/etc/mkinitcpio.conf
