@@ -1,9 +1,9 @@
-pkgname='maximbaz'
+pkgname='kr1'
 pkgver=2.17.0
 pkgrel=1
-pkgdesc='Packages installed by maximbaz'
+pkgdesc='Packages installed by kr1'
 arch=('any')
-url='https://github.com/maximbaz/dotfiles'
+url='https://github.com/Kr1Kr1/dotfiles'
 license=('MIT')
 source=(
     '30-font-aliases.conf'
@@ -238,6 +238,7 @@ depends=(
     'strace'
     'fzf'
     'visidata'
+    'vscodium-bin'
 
     # shell dev
     'bash-language-server'
@@ -336,4 +337,5 @@ depends=(
     'transmission-gtk'
     'signal-desktop'
     'libinput-gestures'
+    'slack-desktop'
 )

@@ -325,3 +325,11 @@ rga-fzf() {
                 --preview-window="70%:wrap"
     )"
 }
+
+### vscode
+alias code='/usr/share/vscodium-bin/bin/codium --no-sandbox'
+
+### dailymotion
+alias dm='/home/kr1/dailymotion/gitlab/infra/dm/libexec/dm'
+alias dmdns='/home/kr1/dailymotion/gitlab/infra/dm/share/dmdns/dmdns'
+export VAULT_ADDR=https://vault.dm.gg:8200

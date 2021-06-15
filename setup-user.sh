@@ -66,6 +66,7 @@ link ".config/htop"
 link ".config/imapnotify"
 link ".config/kak"
 link ".config/kak-lsp"
+link ".config/kanshi"
 link ".config/kitty"
 link ".config/libinput-gestures.conf"
 link ".config/mako"
@@ -132,7 +133,7 @@ else
     systemctl_enable_start "backup-packages.timer"
     systemctl_enable_start "flashfocus.service"
     systemctl_enable_start "libinput-gestures.service"
-    systemctl_enable_start "mako.service"
+    # systemctl_enable_start "mako.service"
     systemctl_enable_start "polkit-gnome.service"
     systemctl_enable_start "qutebrowser-update-useragent.timer"
     systemctl_enable_start "safeeyes.service"
@@ -185,7 +186,7 @@ else
     if [ ! -s "$HOME/.config/Yubico/u2f_keys" ]; then
         echo "Configuring YubiKey for passwordless sudo (touch it now)"
         mkdir -p "$HOME/.config/Yubico"
-        pamu2fcfg -umaximbaz > "$HOME/.config/Yubico/u2f_keys"
+        # pamu2fcfg -ukr1 > "$HOME/.config/Yubico/u2f_keys"
     fi
 fi
 

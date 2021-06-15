@@ -2,8 +2,8 @@
 font pango: Taskbar, Cantarell 9
 
 input type:keyboard {
-    xkb_layout us-hyper,ru
-    xkb_options grp:shifts_toggle,compose:ralt,caps:hyper,numpad:mac
+    xkb_layout fr-hyper,us
+    xkb_options grp:shifts_toggle,caps:hyper
     xkb_numlock enable
 }
 
@@ -295,8 +295,11 @@ bindsym --to-code {
 }
 
 # Load host-specific configs
-include "~/.config/sway/$(cut -d'-' -f1 /etc/hostname).conf"
+# include "~/.config/sway/$(cut -d'-' -f1 /etc/hostname).conf"
 
 # Load systemd integration
 include /etc/sway/config.d/*
 exec systemctl --user start sway-session.target
+
+exec nm-applet &
+#hyper+n           fullscreen disable, exec "pgrep -x dmenu && pkill dmenu || networkmanager_dmenu"
