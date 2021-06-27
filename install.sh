@@ -18,7 +18,7 @@
 # Run installation:
 #
 # - Connect to wifi via: `# iwctl station wlan0 connect WIFI-NETWORK`
-# - Run: `# bash <(curl -sL https://git.io/maximbaz-install)`
+# - Run: `# bash <(curl -sL https://git.io/kr1-install)`
 
 set -uo pipefail
 trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
@@ -160,31 +160,31 @@ mount -o noatime,nodiratime,compress=zstd,subvol=swap /dev/mapper/luks /mnt/swap
 mount -o noatime,nodiratime,compress=zstd,subvol=snapshots /dev/mapper/luks /mnt/.snapshots
 
 echo -e "\n### Configuring custom repo"
-mkdir /mnt/var/cache/pacman/maximbaz-local
+mkdir /mnt/var/cache/pacman/kr1-local
 
 if [[ "${hostname}" == "home-"* ]]; then
-    wget -m -nH -np -q --show-progress --progress=bar:force --reject='index.html*' --cut-dirs=2 -P '/mnt/var/cache/pacman/maximbaz-local' 'https://pkgbuild.com/~maximbaz/repo/'
-    rename -- 'maximbaz.' 'maximbaz-local.' /mnt/var/cache/pacman/maximbaz-local/*
+    wget -m -nH -np -q --show-progress --progress=bar:force --reject='index.html*' --cut-dirs=2 -P '/mnt/var/cache/pacman/kr1-local' 'https://pkgbuild.com/~kr1/repo/'
+    rename -- 'kr1.' 'kr1-local.' /mnt/var/cache/pacman/kr1-local/*
 else
-    repo-add /mnt/var/cache/pacman/maximbaz-local/maximbaz-local.db.tar
+    repo-add /mnt/var/cache/pacman/kr1-local/kr1-local.db.tar
 fi
 
-if ! grep maximbaz /etc/pacman.conf > /dev/null; then
+if ! grep kr1 /etc/pacman.conf > /dev/null; then
     cat >> /etc/pacman.conf << EOF
-[maximbaz-local]
-Server = file:///mnt/var/cache/pacman/maximbaz-local
+[kr1-local]
+Server = file:///mnt/var/cache/pacman/kr1-local
 
-[maximbaz]
-Server = https://pkgbuild.com/~maximbaz/repo
+[kr1]
+Server = https://pkgbuild.com/~kr1/repo
 
 [options]
 CacheDir = /mnt/var/cache/pacman/pkg
-CacheDir = /mnt/var/cache/pacman/maximbaz-local
+CacheDir = /mnt/var/cache/pacman/kr1-local
 EOF
 fi
 
 echo -e "\n### Installing packages"
-pacstrap -i /mnt maximbaz
+pacstrap -i /mnt kr1
 
 echo -e "\n### Generating base config files"
 ln -sfT dash /mnt/usr/bin/sh
@@ -231,7 +231,7 @@ echo "$user:$password" | arch-chroot /mnt chpasswd
 arch-chroot /mnt passwd -dl root
 
 echo -e "\n### Setting permissions on the custom repo"
-arch-chroot /mnt chown -R "$user:$user" /var/cache/pacman/maximbaz-local/
+arch-chroot /mnt chown -R "$user:$user" /var/cache/pacman/kr1-local/
 
 echo -e "\n### Cloning dotfiles"
 arch-chroot /mnt sudo -u $user bash -c 'git clone --recursive https://github.com/kr1/dotfiles.git ~/.dotfiles'

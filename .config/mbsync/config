@@ -1,17 +1,17 @@
-IMAPStore maximbaz-remote
-Host mail.maximbaz.com
-User me@maximbaz.com
-PassCmd "gpg --quiet --decrypt ~/.cache/mail.maximbaz.com.gpg"
+IMAPStore 
+Host 
+User 
+PassCmd 
 SSLType IMAPS
 
-MaildirStore maximbaz-local
-Path ~/.mail/maximbaz/
-Inbox ~/.mail/maximbaz/INBOX
+MaildirStore 
+Path 
+Inbox 
 SubFolders Verbatim
 
-Channel maximbaz
-Master :maximbaz-remote:
-Slave :maximbaz-local:
+Channel 
+Master 
+Slave 
 Create Both
 Expunge Both
 CopyArrivalDate yes

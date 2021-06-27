@@ -173,7 +173,7 @@ file --compile --magic-file "$HOME/.magic"
 
 if ! gpg -k | grep "$MY_GPG_KEY_ID" > /dev/null; then
     echo "Importing my public PGP key"
-    curl -s https://maximbaz.com/pgp_keys.asc | gpg --import
+    curl -s https://kr1.dev/pgp_keys.asc | gpg --import
     echo "5\ny\n" | gpg --command-fd 0 --no-tty --batch --edit-key "$MY_GPG_KEY_ID" trust
 fi
 
@@ -208,8 +208,8 @@ fi
 echo "Ignoring further changes to often changing config"
 git update-index --assume-unchanged ".config/transmission/settings.json"
 
-echo "Configure repo-local git settings"
-git config user.email "git@maximbaz.com"
-git config user.signingkey "8053EB88879A68CB4873D32B011FDC52DA839335"
-git config commit.gpgsign true
-git remote set-url origin "git@github.com:maximbaz/dotfiles.git"
+# echo "Configure repo-local git settings"
+git config user.email "aitsiamer.karin+git@gmail.com"
+# git config user.signingkey ""
+# git config commit.gpgsign true
+git remote set-url origin "git@github.com:Kr1Kr1/dotfiles.git"

@@ -1,19 +1,19 @@
 set realname = "Maxim Baz"
-set from = "PLACEHOLDER@maximbaz.com"
-alternates @maximbaz.com
+set from = "PLACEHOLDER@kr1.com"
+alternates @kr1.com
 set use_domain = no
-set hostname = maximbaz.com
+set hostname = kr1.com
 set reverse_name = yes
 
 set sig_on_top = yes
 set signature = ~/.config/neomutt/signature
 
-set sendmail = "/usr/bin/msmtp -a maximbaz"
+set sendmail = "/usr/bin/msmtp -a kr1"
 set use_envelope_from = yes
 set edit_headers = yes
 set user_agent = no
 
-set folder = "~/.mail/maximbaz"
+set folder = "~/.mail/kr1"
 set mbox_type = Maildir
 set ssl_force_tls = yes
 set spoolfile = "+INBOX"

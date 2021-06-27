@@ -8,15 +8,15 @@
 - [kitty](https://github.com/kovidgoyal/kitty) (fast GPU-accelerated terminal)
 - [kakoune](https://github.com/mawww/kakoune) (modular text editor with multiple cursors)
 - [zsh](https://www.zsh.org) + [powerlevel10k](https://github.com/romkatv/powerlevel10k) and various other plugins
-- [yubikey-touch-detector](https://github.com/maximbaz/yubikey-touch-detector) - a tool that can detect when your YubiKey is waiting for a touch.
+- [yubikey-touch-detector](https://github.com/kr1/yubikey-touch-detector) - a tool that can detect when your YubiKey is waiting for a touch.
 - [browserpass](https://github.com/browserpass/browserpass-extension) - browser extension for `pass` and `gopass`.
 - [wire-desktop](https://github.com/wireapp/wire-desktop) - end-to-end encrypted chat app.
-- [wluma](https://github.com/maximbaz/wluma) - automatic brightness adjustment based on screen contents.
-- [wl-clipboard-manager](https://github.com/maximbaz/wl-clipboard-manager) - clipboard manager for Wayland.
+- [wluma](https://github.com/kr1/wluma) - automatic brightness adjustment based on screen contents.
+- [wl-clipboard-manager](https://github.com/kr1/wl-clipboard-manager) - clipboard manager for Wayland.
 - [ttf-joypixels](https://www.archlinux.org/packages/community/any/ttf-joypixels/) - latest JoyPixels font that provides colorful emojis for almost all apps on Linux (formerly EmojiOne).
 - [aurutils](https://github.com/AladW/aurutils) - the most reasonable AUR helper out there.
 - [xplr](https://github.com/sayanarijit/xplr) - hackable, minimal and fast file manager.
-- [arch-secure-boot](https://github.com/maximbaz/arch-secure-boot) + [snap-pac](https://github.com/wesbarnett/snap-pac) - UEFI Secure Boot for Arch Linux + btrfs snapshots during system update.
+- [arch-secure-boot](https://github.com/kr1/arch-secure-boot) + [snap-pac](https://github.com/wesbarnett/snap-pac) - UEFI Secure Boot for Arch Linux + btrfs snapshots during system update.
 
 ## Fun things you can find in this repo:
 
@@ -75,7 +75,7 @@
 ## Usage:
 
 ```
-$ git clone https://github.com/maximbaz/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/kr1/dotfiles.git ~/.dotfiles
 $ ~/.dotfiles/setup-system.sh
 $ ~/.dotfiles/setup-user.sh
 ```

@@ -8,7 +8,7 @@
 	branch = master
 [submodule ".config/kak/restclient.kak"]
 	path = .config/kak/restclient.kak
-	url = https://github.com/maximbaz/restclient.kak
+	url = https://github.com/kr1/restclient.kak
 [submodule ".config/kak/surround.kak"]
 	path = .config/kak/surround.kak
 	url = https://github.com/alexherbo2/surround.kak

@@ -38,7 +38,7 @@ copy() {
     if [ -z "$reverse" ]; then
         [ -n "$2" ] && chmod "$2" "$dest_file"
     else
-        chown -R maximbaz "$dest_file"
+        chown -R kr1 "$dest_file"
     fi
     echo "$dest_file <= $orig_file"
 }
@@ -142,8 +142,8 @@ if [ ! -s "/etc/usbguard/rules.conf" ]; then
     echo >&2 "=== Remember to set usbguard rules: usbguard generate-policy >! /etc/usbguard/rules.conf"
 fi
 
-if [ -d "/home/maximbaz/.ccnet" ]; then
-    systemctl_enable_start "seaf-cli@maximbaz.service"
+if [ -d "/home/kr1/.ccnet" ]; then
+    systemctl_enable_start "seaf-cli@kr1.service"
 else
     echo >&2 "=== Seafile is not initialized, skipping..."
 fi
@@ -177,4 +177,4 @@ echo "Configuring NTP"
 timedatectl set-ntp true
 
 echo "Configuring aurutils"
-ln -sf /etc/pacman.conf /etc/aurutils/pacman-maximbaz-local.conf
+ln -sf /etc/pacman.conf /etc/aurutils/pacman-kr1-local.conf
