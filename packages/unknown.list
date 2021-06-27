@@ -4,6 +4,8 @@ expect
 firefox-nightly
 github-cli
 gitlab-glab-bin
+go-lint-git
+grpc-cli
 kr1
 molotov
 mysql57
